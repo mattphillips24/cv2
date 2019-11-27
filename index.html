@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Matt's Personal Site</title>
+</head>
+
+<body>
+  <table cellspacing = 20>
+    <tr>
+      <td><img src="https://ramblinwreck.com/wp-content/uploads/2014/02/7458652.jpeg" width="165" height="200" alt="Matt Phillips Profile Picture"></td>
+      <td><h1>Matt Phillips</h1>
+      <p><em>Zero-Based Budgeting Supervisor at UPS. Former <a href="https://247sports.com/Player/Matt-Phillips-15336/">Pitcher</a> at Georgia Tech.</em></p>
+      <p>I am a finance application developer. I love sports and cutting hair.</p></td>
+    </tr>
+  </table>
+  <hr>
+  <h3>Work Experience</h3>
+  <table cellspacing = 10>
+    <tr>
+      <td>Ayco, a Goldman Sachs Company</td>
+      <td>Oct 2017 - Jan 2019</td>
+    </tr>
+    <tr>
+      <td>United Parcel Service, Inc.</td>
+      <td>May 2019 - Present</td>
+    </tr>
+  </table>
+  <hr>
+  <h3>Skills</h3>
+  <table cellspacing = 10>
+      <tr>
+        <td>Microsoft Excel</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>Visual Basic</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>SQL Server</td>
+        <td>4</td>
+      </tr>
+  </table>
+  <hr>
+  <h3>Contact Me</h3>
+  <form action="mailto:maphillips7@gmail.com" method="post" enctype="text/plain">
+    <label>Your Name:</label>
+    <input type="text" name="yourName" value=""><br>
+    <label>Your Email:</label>
+    <input type="email" name="youremail" value=""><br>
+    <label>Your Message:</label><br>
+    <textarea name="yourmessage" rows="3" cols="30"></textarea><br>
+    <input type="submit" name="">
+  </form>
+
+
+
+  <div id="paypal-button"></div>
+  <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+  <script>
+  paypal.Button.render({
+  // Configure environment
+  env: 'sandbox',
+  client: {
+  sandbox: 'demo_sandbox_client_id',
+  production: 'demo_production_client_id'
+  },
+  // Customize button (optional)
+  locale: 'en_US',
+  style: {
+  size: 'small',
+  color: 'gold',
+  shape: 'pill',
+  },
+  // Set up a payment
+  payment: function (data, actions) {
+  return actions.payment.create({
+  transactions: [{
+  amount: {
+  total: '0.01',
+  currency: 'USD'
+  }
+  }]
+  });
+  },
+  // Execute the payment
+  onAuthorize: function (data, actions) {
+  return actions.payment.execute()
+  .then(function () {
+  // Show a confirmation message to the buyer
+  window.alert('Thank you for your purchase!');
+  });
+  }
+  }, '#paypal-button');
+  </script>
+
+
+
+
+
+
+
+</body>
+
+</html>
